@@ -15,7 +15,7 @@ add_three = \x y z -> x + y + z
 x = app (\x -> x + 1) 1
 
 -- Map -> Applies Function to List of Arguments
-y = map (\(x, y) -> x + y) [(1,2), (2,3), (3,4)]
+y = _ (\(x, y) -> x + y) [(1,2), (2,3), (3,4)]
 
 -- Filter -> Filters List by Condition, if true -> in
-z = filter (\x -> x `mod` 2 == 0) [1,2,3,4,5,6] 
+z = filter (\x -> x `mod` 2 == 0) [1,2,3,4,5,6]
