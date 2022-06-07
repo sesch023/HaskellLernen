@@ -13,4 +13,4 @@ quicksort_r [] = []
 quicksort_r (x:xs) =
     let smallerSorted = quicksort_r [a | a <- xs, a <= x]
         biggerSorted = quicksort_r [a | a <- xs, a > x]
-    in  smallerSorted ++ [x] _ biggerSorted
+    in  smallerSorted ++ [x] ++ biggerSorted
