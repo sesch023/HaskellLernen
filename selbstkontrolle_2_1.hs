@@ -34,7 +34,7 @@ list2poly [] = Const 0.0
 list2poly x = foldr (\x acc -> Sum x acc) (last x) (init x)
 
 ableiten :: Polynom -> Polynom
-ableiten x = ableitenRec $ cleanPoly$ list2poly $ poly2list x
+ableiten x = ableitenRec $ cleanPoly $ list2poly $ poly2list x
 
 ableitenRec :: Polynom -> Polynom
 ableitenRec (Const _) = Const 0.0
@@ -59,3 +59,4 @@ cleanPolySingle (Sum (PowerOfX x a) (PowerOfX y b))
     | a == b = PowerOfX (x + y) a
     | otherwise = Sum (PowerOfX x a) (PowerOfX y b)
 cleanPolySingle (Sum a b) = Sum (cleanPolySingle a) (cleanPolySingle b)
+cleanPolySingle x = x
